@@ -1,0 +1,161 @@
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature-item {
+    background-color: #fff; /* White background for feature items */
+    border: 2px solid #000; /* Black border for the card */
+    border-radius: 20px;
+    box-shadow: 5px 6px 6px rgba(255, 250, 250, 0.3); /* Visible shadow effect */
+    color: #000; /* Black text */
+    width: calc(50% - 20px); /* Responsive width with spacing */
+    max-width: 320px; /* Increased max width */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    text-align: center;
+    position: relative; /* Ensure hover effect applies correctly */
+}
+
+.feature-item:hover {
+    transform: translateY(-10px); /* Lift card on hover */
+    box-shadow: 0px 12px 24px rgba(255, 247, 247, 0.5); /* Bold shadow on hover */
+}
+
+.feature-icon {
+    background-color: #000; /* Black background for the icon */
+    color: #fff; /* White icon color */
+    font-size: 50px; /* Increased icon size */
+    margin: 0 auto 15px; /* Increased margin */
+    padding: 15px 30px; /* Increased padding */
+    border-radius: 50%; /* Circular background */
+    border: 1px solid rgb(247, 247, 247);
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 5px 6px 6px rgba(0, 0, 0, 0.3); /* Visible shadow effect */
+}
+
+.feature-icon:hover {
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Black icon color on hover */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.5); /* Bold shadow on hover */
+    transform: scale(1.2); /* Enlarge icon on hover */
+    border: 1px solid black;
+
+}
+
+.feature-text h3 {
+    font-size: 22px; /* Increased heading size */
+    margin: 10px 0;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Change font styling */
+    color: #000; /* Black text color */
+}
+
+.feature-text p {
+    font-size: 16px; /* Increased text size */
+    font-family: 'Arial', sans-serif; /* Change font styling */
+    color: #000; /* Black text color */
+}
+
+.features-heading {
+    text-align: left; /* Align text to the left */
+    padding: 20px;
+    border-radius: 8px; /* Slightly rounded corners for a modern look */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
+    margin-bottom: 20px; /* Space below the heading */
+    position: relative; /* Positioning context for the underline */
+    width: fit-content; /* Fit container to the content width */
+    margin-left: 20px; /* Gap from the left corner */
+}
+
+.features-heading h2 {
+    font-size: 32px; /* Heading size */
+    color: #ffffff; /* Dark grey text color for contrast */
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Font styling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    position: relative; /* Positioning context for the underline */
+    margin-left: 45px;
+}
+
+.features-heading h2::after {
+    content: ''; /* Empty content for the underline effect */
+    display: block;
+    width: 50%; /* Width of the underline */
+    height: 10px; /* Thickness of the underline */
+    background-color: #fecd0a; /* Primary color for the underline */
+    border-radius: 20px;
+    position: absolute; /* Absolute positioning to place the underline */
+    bottom: -10px; /* Position it below the text */
+    left: 0; /* Align to the left edge of the heading */
+    transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+.features-heading h2:hover::after {
+    width: 100%; /* Expand underline on hover */
+    background-color: #fecd0a; /* Primary color for the underline */
+}
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Applying animation on page load */
+.features .feature-item {
+    animation: fadeIn 1s ease-out; /* Add fade-in effect */
+}
+
+.features-heading {
+    animation: fadeIn 1s ease-out 0.5s; /* Add fade-in effect with delay */
+}
+/* Mobile devices */
+@media (max-width: 600px) {
+    .features {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items horizontally */
+    }
+
+    .feature-item {
+        width: calc(100% - 40px); /* Full width minus padding */
+        max-width: none; /* Remove max-width constraint */
+    }
+
+    .features-heading {
+        margin-left: 0; /* Remove left margin on small screens */
+        text-align: center; /* Center heading text on small screens */
+    }
+
+    .features-heading h2 {
+        margin-left: 0; /* Remove left margin on heading */
+    }
+}
+
+/* Tablets and small desktops */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .features {
+        flex-direction: row; /* Arrange items in a row */
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .feature-item {
+        width: calc(50% - 20px); /* Responsive width with spacing */
+    }
+
+    .features-heading {
+        margin-left: 20px; /* Restore left margin */
+        text-align: left; /* Align heading text to the left */
+    }
+}

@@ -1,0 +1,109 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px; /* Smaller padding for a more compact look */
+    background-color: #000; /* Black background */
+    border-radius: 30px; /* Capsule shape */
+    margin: 10px; /* Add margin for spacing */
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.15); /* Pronounced white shadows for 3D effect */
+}
+
+
+.nav-title {
+    color: #000; /* Black text color for better contrast */
+    font-size: 25px; /* Larger font size for a more prominent logo */
+    font-weight: bold;
+    position: relative; /* Position for the 3D effect */
+    padding: 5px 13px; /* Add padding for better visual appeal */
+    background-color: #fff; /* White background for the title */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-transform: uppercase; /* Uppercase text for added style */
+    letter-spacing: 2px; /* Increased letter spacing for modern appearance */
+    display: inline-block; /* Ensure padding and background apply correctly */
+    box-shadow: 4px 5px 1px rgba(255, 255, 255, 0.15); /* Pronounced white shadows for 3D effect */
+
+}
+
+/* Enhanced 3D Effect for the title */
+.nav-title::before {
+    content: ''; /* No content needed for the pseudo-element */
+    position: absolute;
+    top: 6px; /* Offset for the shadow */
+    left: 6px; /* Offset for the shadow */
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place shadow behind the text */
+    border-radius: 12px; /* Match border-radius for seamless shadow effect */
+}
+
+/* Hover Effect */
+.nav-title:hover {
+    color: #ffffff; /* Change text color on hover to black for better contrast */
+    background-color: rgb(0, 0, 0); /* Yellow background on hover for a standout effect */
+    text-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4); /* Enhanced shadow for stronger 3D effect */
+    transform: scale(1.1); /* Slightly enlarge text on hover */
+    cursor: pointer;
+}
+
+/* Optional: Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-title {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        padding: 6px 12px; /* Adjust padding for smaller screens */
+    }
+}
+
+.nav-icons {
+    display: flex;
+    gap: 8px; /* Closer alignment for a compact design */
+}
+
+.nav-icon {
+    color: #000; /* Icon color when not hovered */
+    background-color: #fff; /* White background for the icons */
+    font-size: 20px; /* Smaller icon size */
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%; /* Circular background */
+    padding: 6px; /* Smaller padding for a more compact look */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    width: 36px; /* Smaller width for circular shape */
+    height: 36px; /* Smaller height for circular shape */
+    box-shadow: 5px 1px 4px rgba(255, 255, 255, 0.5); /* White shadow on hover for a stronger 3D effect */
+    transition: all 0.3s ease;
+}
+
+.nav-icon:hover {
+    background-color: #000; /* Black background on hover */
+    color: #fff; /* White icon color on hover */
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.5); /* White shadow on hover for a stronger 3D effect */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px;
+    }
+
+    .nav-icons {
+        margin-top: 8px;
+        gap: 6px; /* Adjust gap for smaller screens */
+    }
+
+    .nav-title {
+        font-size: 18px; /* Smaller font size for the title */
+    }
+
+    .nav-icon {
+        width: 32px; /* Even smaller size for circular icons */
+        height: 32px;
+        font-size: 18px; /* Adjust font size for smaller icons */
+    }
+}

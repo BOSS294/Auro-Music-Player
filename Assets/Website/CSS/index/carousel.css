@@ -1,0 +1,165 @@
+.carousel {
+    position: relative;
+    max-width: 3000px; /* Increased width for a larger carousel */
+    margin: auto;
+    background-color: #000; /* Black background */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow for stronger 3D effect */
+    border: 1px solid #fff; /* White border around the carousel */
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding transition */
+    will-change: transform; /* Optimize for animations */
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 30px; /* Increased padding for more content space */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    height: 400px; /* Increased height for the carousel */
+    animation: slideUp 0.5s ease-in-out;
+
+}
+
+.slide-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.slide-icon {
+    color: #000; /* Black icon color */
+    font-size: 80px; /* Icon size */
+    margin-right: 30px; /* Space between icon and content */
+    background-color: #fff; /* White background for the icon */
+    border-radius: 50%; /* Circular background */
+    padding: 40px; /* Increased padding for larger icon circle */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow for 3D effect */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center icon inside the circle */
+    border: 1px solid gold;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.slide-icon:hover {
+    background-color: #000; /* Black background on hover */
+    color: #fff; /* White icon color on hover */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.6); /* Bold shadow for a stronger 3D effect */
+    transform: translateY(-5px); /* Lift effect */
+}
+
+.slide-text {
+    max-width: 70%; /* Adjust width for a balanced layout */
+    margin-left: auto; /* Shift content to the right side */
+    margin-right: 20px; /* Add some space from the right edge */
+    color: #fff; /* Ensure text is white for contrast */
+}
+
+.slide-text h2 {
+    font-size: 32px; /* Increased font size for a bolder heading */
+    font-weight: 700; /* Bold font weight */
+    margin: 0 0 10px 0; /* Margin adjustment for spacing */
+    font-family: 'Roboto', sans-serif; /* Example modern font, adjust as needed */
+
+}
+
+.slide-text p {
+    font-size: 20px; /* Increased font size for better readability */
+    font-weight: 400; /* Normal font weight */
+    line-height: 1.4; /* Improved line spacing for readability */
+    margin: 0; /* Remove default margin */
+    color: #ddd; /* Slightly lighter text color for better contrast */
+}
+
+
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: #fff;
+    font-size: 36px; /* Increased button size */
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-dots {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.dot {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 50%;
+    height: 12px; /* Increased dot size */
+    width: 12px;
+    margin: 0 7px; /* Increased spacing between dots */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #ff0; /* Highlighted dot color */
+}
+
+.dot:hover {
+    background-color: #ff0;
+}
+
+/* Animation for sliding effect */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel {
+        max-width: 100%;
+    }
+
+    .carousel-slide {
+        height: auto; /* Auto height for smaller screens */
+        padding: 20px;
+    }
+
+    .slide-icon {
+        font-size: 50px;
+        padding: 15px;
+    }
+
+    .slide-text h2 {
+        font-size: 22px;
+    }
+
+    .slide-text p {
+        font-size: 16px;
+    }
+}
